@@ -1,7 +1,9 @@
 
 # Smart Recommendation System
 
-A robust and scalable recommendation system designed to offer personalized suggestions based on both content-based and collaborative filtering models. This system employs multiple machine learning techniques to provide high-quality recommendations to users. 
+- A robust and scalable recommendation system designed to offer personalized suggestions based on both content-based and collaborative filtering models. This system employs multiple machine learning techniques to provide high-quality recommendations to users. 
+
+- [Live App](https://imabhnv-smart-recommendation-system.streamlit.app/)
 
 ## Overview
 
@@ -9,7 +11,7 @@ The **Smart Recommendation System** leverages:
 1. **Content-based Filtering** - Recommends items similar to those the user has shown interest in, based on item features.
 2. **Collaborative Filtering** - Recommends items based on user-item interactions, utilizing user preferences and behavior.
 
-Additionally, the system is integrated with an **evaluation module** to assess model performance using accuracy metrics like Precision, Recall, and F1-score.
+Additionally, the system is integrated with an **evaluation module** to assess model performance using accuracy metrics.
 
 ## Features
 
@@ -24,12 +26,6 @@ Additionally, the system is integrated with an **evaluation module** to assess m
 Smart-Recommendation-System/
 │
 ├── app.py                    # Main execution file to run the recommendation system.
-├── data/                     # Folder containing datasets and raw data.
-├── models/                   # Folder containing model-related code and saved models.
-│   ├── content_based.py       # Content-based recommendation model code.
-│   └── collaborative.py       # Collaborative filtering model code.
-├── evaluation/               # Folder containing model evaluation code and metrics.
-│   └── model_evaluation.py   # Evaluation functions for precision, recall, and accuracy.
 ├── requirements.txt          # List of dependencies required to run the project.
 ├── smart_recommender.py      # Core logic for building recommendation models.
 └── README.md                 # This README file.
@@ -59,45 +55,15 @@ Follow these steps to set up the environment:
 
 ## Usage
 
-1. **Load Data**: Ensure that you have the data files in the `data/` directory.
+1. **Load Data**: First of all run the smart_recommender.py file to generate model file.
 
 2. **Run the Recommendation System**:
 
    The `app.py` file runs the system and produces recommendations based on the provided dataset.
 
    ```bash
-   python app.py
+   streamlit run streamlit_app.py
    ```
-
-3. **Evaluation**: Use the `evaluate_model()` function from the `evaluation/model_evaluation.py` to assess your recommendation models' performance.
-
-   ```python
-   from evaluation.model_evaluation import evaluate_model
-   
-   # Assuming you have your content and user-item matrices
-   evaluate_model(content_matrix, model_type='content')
-   evaluate_model(user_item_matrix, model_type='collaborative')
-   ```
-
-## Example
-
-Once the system is up and running, you can view the recommendation results in your console or modify the system to integrate with a front-end application for a user interface.
-
-```python
-from smart_recommender import SmartRecommender
-
-# Initialize and load data
-recommender = SmartRecommender()
-recommender.load_sample_data()
-
-# Build models
-recommender.build_content_based_model()
-recommender.build_collaborative_filtering_model()
-
-# Evaluate models
-results = evaluate_recommender_models(recommender.content_matrix, recommender.user_item_matrix)
-print(results)
-```
 
 ## Evaluation
 
@@ -121,6 +87,4 @@ These dependencies are listed in the `requirements.txt` file.
 
 If you'd like to contribute to this project, feel free to fork the repository, make changes, and submit a pull request. Please make sure to follow the coding standards and test your changes thoroughly.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Made with 💻♥️ by Abhinav Varshney🚀
